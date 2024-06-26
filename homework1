@@ -1,1 +1,477 @@
+/* 1.Create a function that takes two numbers as arguments and returns their sum. */
+
+
+/* const addition = (num1, num2) => {
+  return num1 + num2;
+}
+
+console.log(addition(7,3)); */
+
+
+/* 2. Write a function that takes an integer minutes and converts it to seconds. */
+
+
+/* const convert = (minutes) => {
+  return minutes * 60;
+}
+
+console.log(convert(2)); */
+
+
+/* 3. Create a function that takes the age in years and returns the age in days. */
+
+/* const calcAge = (years) => {
+  return years * 365
+}
+
+console.log(calcAge(0)); */
+
+
+/* 4. Make a function “nameString”. The code should concatenate a passed
+string name with string "Edabit" and store it in a variable called result and
+return it. */
+
+/* 
+const nameString = (name) => {
+  return name + "Edabit";
+}
+
+console.log(nameString("Matt"));
+ */
+
+
+/*  5.Create a function that returns true when num1 is equal to num2 ; otherwise
+ return false .
+ */
+
+/*  const isSameNum = (num1, num2) => {
+   if(num1 === num2){
+    return true
+  }else{
+    return false
+  }
+ }
+ 
+ console.log(isSameNum(2, "2")); */
+
+
+/*  6. What would be the outputs and explain why? */
+
+/* function varTest() {
+   if(true){
+    var x = 1;
+    console.log(x)
+  }
+  console.log(x)
+ }
+ 
+ function letTest() {
+   if(true){
+      let y = 2;
+      console.log(y)
+    }
+    console.log(y)
+ }
+ 
+  function constTest() {
+   if(true){
+      const z = 3;
+      console.log(z)
+    }
+    console.log(z)
+ }
+ 
+ 
+ varTest()
+ letTest()
+ constTest() */
+
+/* varTest() - The output will be 1, 1, because 1st console is after declaration and it is ok, and the second one will be read, because var is readable even out of scobe. */
+
+/*letTest() -  The output will be 2 and error because 1st console is after declaration and it is ok, and the second one will not be read, because let is readen in block scope. */
+
+/* constTest() - The output will be 3 and error because 1st console is after declaration and it is ok, and the second one will not be read, because const is readen in block scope.  */
+
+
+
+/* 7. What would be the outputs and explain why? */
+
+/* console.log(a);
+var a = 5; */
+
+/* answer- undefined, because var is hoisting, but not the value; */
+
+/* console.log(b);
+let b = 10; */
+
+/* answer- error, because let is hoisting, but you can't access it before initialization */
+
+/* console.log(c);
+const c = 15; */
+
+/* answer- error, because const is hoisting, but you can't access it before initialization */
+
+
+/* 8. What would be the outputs and explain why? */
+
+/* var a = 2;
+var b = a;
+
+b++
+
+console.log(a);
+console.log(b); */
+
+/* answer - 2, 3, because a remains the same, b takes value of a and then pluses 1; */
+
+
+/* 9. What would be the outputs and explain why? */
+
+/* var c = [1,2,3];
+
+var d = c;
+
+d.push(4);
+
+console.log(c);
+console.log(d);
+
+answer - [1,2,3,4], [1,2,3,4], because as array is not of primitive type, the value isn't kept in stack. It is kept in heap, so here we don't copy the value of array, but the path, that's why the pushed 4 is pushed to both arrays. */
+
+
+
+/* 10. What would be the outputs and explain why? */
+
+/* var a = [1,2,3];
+var b = a;
+
+console.log(a);
+console.log(b);
+
+b = [4,5,6];
+
+console.log(a);
+console.log(b);
+
+answer [1, 2, 3], [1, 2, 3]
+      [1, 2, 3], [4, 5, 6], the last one is changed , because new value is given to b; */
+
+
+/* 11. What would be the outputs and explain why? */
+
+/* function foo(x) {
+  x.push(9);
+  console.log(x);
+  
+  x = [4, 5, 6];
+  x.push(7);
+  console.log(x);
+}
+
+var a = [1,2,3];
+foo(a);
+console.log(a); */
+
+/* [1,2,3,4] - x takes value of a and pushes 4, which also pushes to a
+	[4,5,6,7] - x changes the value and pushes 7
+	[1,2,3,4] - x took value of a and pushes 4, and changes the heap which also refers to a  */
+
+
+/* 12. What would be the outputs and explain why? */
+
+/* function foo(wrapper) {
+  wrapper.a = 42;
+}
+
+var obj = {
+  a: 2
+};
+
+foo(obj);
+
+console.log(obj.a); */
+
+/* answer 42, because in the function foo valu in heap is changed which refers also to obj. */
+
+/* 13.What would be the outputs and explain why? */
+
+/* var x = 10;
+var y = x;
+
+y++;
+console.log(x);
+console.log(y);
+
+answers - 10, 11 , because x remains the same, y takes value of x and then pluses 1; */
+
+
+
+/* 14. What would be the outputs and explain why? */
+
+/* var arr1 = [1,2,3];
+var arr2 = arr1;
+
+arr2.push(4);
+
+console.log(arr1);
+console.log(arr2);
+
+answer - [1,2,3,4], [1,2,3,4], because as array is not of primitive type, the value isn't kept in stack. It is kept in heap, so here we don't copy the value of array, but the path, that's why the pushed 4 is pushed to both arrays.  */
+
+
+/* 15. What would be the outputs and explain why? */
+
+/* 
+var arr1 = [1,2,3];
+var arr2 = arr1;
+
+arr2 = [4,5,6];
+
+console.log(arr1);
+console.log(arr2); */
+
+/* answer = [1,2,3], [4,5,6], because here is reassignment, which does not affect the original array. */
+
+
+/* 16. What would be the outputs and explain why? */
+
+/* function modifyObject(obj){
+  obj.key = "newValue";
+}
+
+var myObj = {key: "value"};
+modifyObject(myObj);
+
+console.log(myObj.key) */
+
+
+/* answer "newValue", because in the function modifyObject value in heap is changed which refers also to myObj. */
+
+
+
+/* 17.What would be the outputs and explain why? */
+
+/* function mutateArray(arr) {
+  arr.push(4);
+  arr = [4,5,6];
+  arr.push(7);
+  console.log(arr);
+}
+
+var myArray = [1,2,3];
+mutateArray(myArray);
+console.log(myArray); */
+
+/* answer - inner console shows [4,5,6,7], because arr value is changed to [4,5,6] and pushes 7, the outer console shows [1,2,3,4], because  mutateArray function takes arr and pushes 4, so it pushes to myArray too. */
+
+
+/* 18. What would be the outputs and explain why? */
+
+/* function updateProperty(wrapper) {
+  wrapper.a = 99;
+}
+
+var myObject = {
+  a: 2
+}
+
+updateProperty(myObject);
+
+console.log(myObject.a);
+ */
+
+/* answer 99, because in the function updateProperty value in heap is changed which refers also to myObject. */
+
+
+/* 19. What would be the outputs and explain why? */
+
+
+/* function incrementValue(num) {
+  num++;
+  console.log(num);
+}
+
+var myNumber = 5;
+
+incrementValue(myNumber);
+
+console.log(myNumber); */
+
+
+/* answer - inner console shows 6 because num is 5, it increments and becomes 6, outer console shows 5, because myNumber's value is primitive, and it doesn't have path so it doesn't change */
+
+
+/* 20. What would be the outputs and explain why? */
+
+
+/* console.log(sum(5,3));
+
+function sum(a,b) {
+  return a + b
+}
+
+answer 8 , because functions are hoisting */
+
+
+
+/* 21. What would be the outputs and explain why? */
+
+/* console.log(multiply(4,5));
+
+function multiply(x, y) {
+  return x*y
+}
+
+answer 20 , because functions are hoisting */
+
+
+
+/* 22. What would be the outputs and explain why? */
+
+/* console.log(foo);
+
+var foo = "bar";
+console.log(foo);
+
+function foo(){} */
+
+/* answer is function foo(){}, "bar", because variable is hoisted first though it is undefined, but the function is hoisted the second but it has path to the heap memory ; */
+
+
+/* 23. What would be the outputs and explain why? */
+
+/* var foo = "baz";
+function foo(){}; 
+console.log(foo) */
+
+/* answer "baz", because the variable is hoisting the first; */
+
+
+
+/* 24. What would be the outputs and explain why */
+
+/* console.log(bar);
+
+var bar = 100;
+console.log(bar);
+
+if(true){
+  console.log(baz)
+  let baz = 200;
+}
+
+answer - 1. undefined, because var is hoisting but not the value;
+          2. 100 
+          3.error , because let hoists but doesn't let you access before initialization */
+
+
+/* 25. What would be the outputs and explain why? */
+
+/* console.log(foo);
+var foo = "hello";
+
+if (true) {
+  console.log(bar);
+  let bar = "world";
+}
+
+console.log(foo);
+
+answer - 1. undefined (because the variable is hoisting but not the value);
+        2. error, because let hoists but doesn't let you access before initialization
+        3. doesn't reach to 3rd console, as there is an error
+ */
+ 
+ /* 26. What would be the outputs and explain why? */
+ 
+/* console.log("operators part")
+
+ console.log(1 + "2")        // "12"
+ console.log("5" - 3)        // 2
+ console.log("10" * "2")     // 20
+ console.log("10" / "2")   //5
+ console.log("10" * "a")  //NaN
+ console.log(true + false) //1
+ console.log(!"hello")  //false
+ console.log(!!0)    //false
+ console.log(!!1)     //true
+ console.log(!!"")    //false
+ console.log(!!" ")    //true
+
+ console.log("Number part")
+ 
+ console.log(Number("123"))  //123
+ console.log(Number("123abc"))//NaN
+ console.log(Number(true)); //1
+ console.log(Number(false)); //0
+ console.log(Number(null)); //0
+ console.log(Number(undefined));  //   NaN
+
+ console.log("Number part")
+
+ console.log(String(123)); // "123" 
+ console.log(String(true));  //"true"
+ console.log(String(false)); //"false"
+ console.log(String(null));		//"null"
+ console.log(String(undefined)); //"undefined"
+ 
+ console.log("Boolean part")
+
+ console.log(Boolean(1))        // true
+ console.log(Boolean(0))        // false
+ console.log(Boolean("hello"))  // true
+ console.log(Boolean(""))       // false
+ console.log(Boolean(null))     // false
+ console.log(Boolean(undefined)) // false
+ console.log(Boolean({}))        // true
+ console.log(Boolean([]))        // true
+
+ console.log("3rd part")
+ 
+ console.log(0 == "");                     //true
+ console.log(0 == "0");                    //true
+ console.log(false == "0");                //true
+ console.log(false == "false");            //true
+ console.log(null == undefined);           //true
+ console.log(null === undefined);          //false
+ console.log("t\r\n" == 0);                //false
+ console.log([] == ![]);                   //true
+ console.log([] == 0);                     //true
+ console.log([1,2] == "1,2");              //true */
+ 
+ 
+  
+  
+  
+  
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
