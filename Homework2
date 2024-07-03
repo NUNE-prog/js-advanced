@@ -1,0 +1,233 @@
+//Homework 2
+//Task 1
+
+/* const rps = (p1, p2) => {
+  if (p1 === p2) {
+    return "It's a draw";
+  } else if ((p1 === "Rock" && p2 === "Scissors") ||
+    (p1 === "Scissors" && p2 === "Paper") ||
+    (p1 === "Paper" && p2 === "Rock")) {
+    return "The winner is p1";
+  } else {
+    return "The winner is p2";
+  }
+}
+
+console.log(rps("Paper", "Paper")) */
+
+
+//Task 2
+
+
+/* const calculator = (a, b, operator) => {
+
+  switch (operator) {
+    case "+":
+      return +a + +b;
+      break;
+    case "-":
+      return +a - +b;
+      break;
+    case "*":
+      return +a * +b;
+      break;
+    case "/":
+      if(+b === 0){
+      return "Error: Division by zero";
+      }
+      return +a / +b;
+      break;
+    default:
+  }
+}
+
+
+console.log(calculator(5, '0', '/')); */
+
+
+//Task 3
+
+
+/* const convertTemperature = (value, scale) =>{  
+  return scale === 'C' ? (+value - 32) * 5/9 : (+value * 9/5) + 32
+}
+
+
+console.log(convertTemperature(0, 'F')); */
+
+
+
+//Task 4
+
+/* const isAdult = (age) => {
+
+return isNaN(+age) ? "Invalid input: Age must be a number." : +age >= 18;
+
+}
+
+console.log(isAdult("asd")) */
+
+
+
+//Task 5
+
+
+/* const calculateBMI = (weight, height) => {
+  if(isNaN(+height) && isNaN(+weight)){
+    return "Invalid input: Height and Weight must be numbers"
+  }else if(isNaN(+height)){
+    return "Invalid input: Height must be a number"
+  }else if(isNaN(+weight)){
+    return "Invalid input: Weight must be a number"
+  }else if (+weight < 0 && +height < 0){
+    return "Invalid input: Height and Weight must be positive numbers."
+  }else if (+weight < 0){
+    return "Invalid input: Weight must be a positive number."
+  }else if (+height < 0){
+    return "Invalid input: Height must be a positive number."
+  }else{
+    return +weight / (+height * +height)
+  }
+}
+
+console.log(calculateBMI('-70', '1.8')) */
+
+
+
+//Task 6
+
+/* const calculateDiscount = (price, discount) => {
+  if (discount > 100 || discount < 0 || price < 0 || isNaN(+price) || isNaN(+discount)) {
+    return "Invalid input: Price and discount must be valid numbers, and discount must be between 0 and 100."
+  }else{
+    return +price - +price * +discount / 100
+  }
+}
+
+console.log(calculateDiscount(100, '110')) */
+
+
+
+//Homework 2.1
+//Task 1
+
+
+/* const checkAge = (age) => {
+  return age < 13 ? "Child" : age <= 19 ? "Teen" : age <= 59 ? "Adult" : "Senior"
+}
+
+console.log(checkAge(100)) */
+
+//Task 2
+
+
+/* const a = 5;
+const b = 10;
+const c = 15;
+
+const result = a < b && b < c ? "1" : a > b && b > c ? "2" : "3";
+
+//answer result will be "1" because a < b and  b < c, so first condition is true; 
+
+console.log(result)
+ */
+ 
+ 
+ //Task 3
+ 
+/*  const hasID = true;
+ const over18 = false;
+ const canEnterClub = hasID && over18 || !hasID;
+ 
+ answer will be false(!hasID) because  hasID && over18 (true && false) returns false(over18) ,
+ over18 || !hasID (false || false) returns last false (!hasID)
+ 
+ console.log(canEnterClub); */
+ 
+ 
+ //Task 4
+
+/* const x = 10;
+const y = 20;
+const z = 30;
+
+let condition = (x < y && y < z) || (x > y && y > z);
+
+//answer will be true (x < y && y < z), because || logical operator returns first true;
+
+console.log(condition) */
+
+
+//Task 5
+
+/* const num = 30;
+const boolean = false;
+
+const result = num < 18 ? "1" : boolean && num >= 18 && num <= 65 ? "2" : "3";
+
+//answer will be "3", beacuse num < 18 is false, so it can't be "1", && logical operator returns false, because boolean is false, so result can't be "2", the last one is the answer.
+
+console.log(result) */
+
+
+//Task 6
+
+/* const a = 5, b = 10, c = 15;
+const result = a > b && b < c || a < c && b > a;
+
+
+//answer - the answer will be true (b > a), beacuse (a > b && b < c) returns false(a > b), then (a > b || a < c), returns true (a < c) , then (a < c && b > a), returns last true (b > a)
+
+
+console.log(result)
+ */
+ 
+ 
+ //Task 7
+ 
+/*  function foo1(num) {
+   return num % 2 === 0;
+ }
+ 
+ function foo2(num) {
+   return num > 0;
+ }
+ 
+ let number = -4;
+ let checkNumber = foo1(number) && foo2(number);
+ 
+ 
+ 
+ //answer will be false, because function foo1 returns true as -4 % 2 is 0, and foo2 returns false as -4 > 0 is false, so true && false returns false.
+ 
+ console.log(checkNumber);
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
