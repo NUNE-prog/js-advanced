@@ -1,0 +1,430 @@
+//Task 1 Count the Letters and Digits --------------------------------------------------
+
+/* let inputText = prompt("Enter the text");
+
+const countAll = (text) => {
+  let array = text.split("");
+  let numbers = 0;
+  let letters = 0;
+
+  for (let i = 0; i < array.length; i++) {
+
+    if (array[i] !== " " && isNaN(+array[i])) {
+      letters += 1;
+    } else if (array[i] !== " " && !isNaN(+array[i])) {
+      numbers += 1;
+    }
+  }
+
+  let result = "Letters: " + letters + "," + " DIGITS: " + numbers;
+  return result
+}
+
+console.log(countAll(inputText));
+ */
+
+//Task 3 Movie Database ------------------------------------------------------------
+
+
+/* const movies = [{
+    title: "Inception",
+    director: "Christopher Nolan",
+    year: 2010,
+    genres: ["Sci-Fi", "Action"]
+  },
+  {
+    title: "The Dark Knight",
+    director: "Christopher Nolan",
+    year: 2008,
+    genres: ["Action", "Crime"]
+  },
+  {
+    title: "Interstellar",
+    director: "Christopher Nolan",
+    year: 2008,
+    genres: ["Sci-Fi", "Drama"]
+  },
+]
+
+let movie = {
+  title: "Seven Pounds",
+  director: "Gabriele Muccino",
+  year: 2023,
+  genres: ["Drama"]
+}
+
+
+function addMovie(movie) {
+  movies.push(movie);
+}
+
+addMovie(movie);
+
+
+function findMoviesByDirector(director) {
+  const directorsList = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].director === director) {
+      directorsList.push(director);
+    }
+  }
+  return directorsList;
+}
+
+console.log(findMoviesByDirector("Christopher Nolan"))
+
+function findMoviesByYear(year) {
+  const yearsList = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].year === year) {
+      yearsList.push(movies[i].title);
+    }
+  }
+  return yearsList;
+}
+
+console.log(findMoviesByYear(2010))
+
+function getMoviesByGenre(genre) {
+  const genresList = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].genres.includes(genre)) {
+      genresList.push(movies[i].title);
+    }
+  }
+  return genresList;
+}
+
+console.log(getMoviesByGenre("Action"))
+function sortMoviesBy(criteria) {
+   if (criteria === "year"){
+    return movies.sort((a, b) => a.year - b.year);
+  }else if(criteria === "director"){
+    return movies.sort((a, b) => a.director.localeCompare(b.director));
+  }else if(criteria === "title"){
+    return movies.sort((a, b) => a.title.localeCompare(b.title));
+  }
+ 
+}
+
+console.log( sortMoviesBy("title") )
+
+
+function removeMovieByTitle(title) {
+  for(let i = 0; i < movies.length; i++){
+    if(movies[i].title === title){
+      movies.splice(i, 1);
+    }
+  }
+  return movies;
+}
+
+console.log(removeMovieByTitle("Interstellar")); */
+
+
+
+
+//Task 4 Library System --------------------------------------------------
+
+
+const library = [{
+    title: "The Catcher in the Rye",
+    author: "J.D. Salinger",
+    ISBN: "1234567890",
+    status: "available"
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    ISBN: "2345678901",
+    status: "borrowed"
+  },
+];
+
+
+let newBook = {
+  title: "Gone with the Wind",
+  author: "Margaret Mitchell",
+  ISBN: "3456789012",
+  status: "available"
+}
+
+function addBook(book) {
+  library.push(book);
+  return library
+}
+
+addBook(newBook);
+
+
+
+function borrowBook(ISBN) {
+
+  for (let i = 0; i < library.length; i++) {
+
+    if (library[i].ISBN === ISBN && library[i].status === "available") {
+      library[i].status = "borrowed"
+      return "You borrowed the book"
+    } else if (library[i].ISBN === ISBN && library[i].status === "borrowed") {
+      return "The book is already borrowed"
+    }
+
+  }
+}
+
+/* console.log(borrowBook("1234567890")); */
+
+
+function returnBook(ISBN) {
+  for (let i = 0; i < library.length; i++) {
+    if (library[i].ISBN === ISBN && library[i].status === "borrowed") {
+      library[i].status = "available";
+      return "You returned the book";
+    } else if (library[i].ISBN === ISBN && library[i].status === "available") {
+      return "You didn't borrow from this library";
+    }
+
+  }
+}
+
+/* console.log(returnBook("2345678901")) */
+
+function findBooksByAuthor(author) {
+  let authorList = [];
+  for (let i = 0; i < library.length; i++) {
+    if (author === library[i].author) {
+      authorList.push(library[i].title);
+    }
+  }
+  return authorList;
+}
+
+/* console.log(findBooksByAuthor("J.D. Salinger")); */
+
+
+
+function listAvailableBooks() {
+  availableList = [];
+
+  for (let i = 0; i < library.length; i++) {
+    if (library[i].status === "available") {
+
+      availableList.push(library[i]);
+    }
+  }
+  return availableList;
+}
+
+/* console.log(listAvailableBooks()) */
+
+
+
+function listBorrowedBooks() {
+  borrowedList = [];
+
+  for (let i = 0; i < library.length; i++) {
+    if (library[i].status === "borrowed") {
+
+      borrowedList.push(library[i]);
+    }
+  }
+  return borrowedList;
+}
+
+/* console.log(listBorrowedBooks()); */
+
+
+//Task 5 Student Gradebook --------------------------------------------------
+
+
+const students = [{
+    name: "Alice",
+    ID: 1,
+    grades: [85, 90, 78]
+  },
+  {
+    name: "Bob",
+    ID: 2,
+    grades: [92, 88, 84]
+  },
+];
+
+
+let newStudent = {
+  name: "Jack",
+  ID: 3,
+  grades: [],
+}
+
+function addStudent(student) {
+  students.push(student);
+  return students;
+}
+
+addStudent(newStudent);
+
+
+
+function addGrade(ID, grade) {
+  for (let i = 0; i < students.length; i++) {
+    if (ID === students[i].ID) {
+      students[i].grades.push(grade);
+    }
+  }
+  return students;
+}
+
+/* console.log(addGrade(3, 74)) */
+
+
+
+function calculateAverageGrade(ID) {
+  let avarage = 0
+  for (let i = 0; i < students.length; i++) {
+    if (ID === students[i].ID) {
+      students[i].grades.forEach(item => avarage += item);
+      avarage = Math.floor(avarage / students.length);
+    }
+  }
+  return avarage;
+}
+
+/* console.log(calculateAverageGrade(3)); */
+
+
+function findHighestGrade(ID) {
+  let max = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (ID === students[i].ID) {
+      max = Math.max(...students[i].grades);
+    }
+  }
+  return max;
+}
+
+/* console.log(findHighestGrade(2)) */
+
+
+
+function findLowestGrade(ID) {
+  let min = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (ID === students[i].ID) {
+      min = Math.min(...students[i].grades);
+    }
+  }
+  return min;
+}
+
+/* console.log(findLowestGrade(2)) */
+
+
+function getStudentsAboveThreshold(threshold) {
+
+  let studentsList = [];
+
+  for (let i = 0; i < students.length; i++) {
+    let avarage = 0;
+    students[i].grades.forEach(item => (avarage += item / students[i].grades.length));
+    if (avarage >= threshold) {
+      studentsList.push(students[i].name)
+    }
+  }
+
+  return studentsList
+
+
+}
+
+
+/* console.log(getStudentsAboveThreshold(80)); */
+
+
+
+//Task 6 E-commerce Cart System --------------------------------------------------
+
+const cart = []
+
+
+
+const addProduct = (product) => {
+	cart.push(product);
+}
+
+addProduct({ name: "Laptop", SKU: "001", price: 1000, quantity: 1 });
+addProduct({ name: "Phone", SKU: "002", price: 500, quantity: 2 });
+
+const removeProduct = (SKU) => {
+	for(let i = 0; i < cart.length; i++){
+  	if (SKU === cart[i].SKU){
+    	cart.splice(i, 1);
+    }
+  }
+  return cart
+} 
+
+/* console.log(removeProduct("001")); */
+
+
+const updateQuantity = (SKU, quantity) => {
+	for(let i = 0; i < cart.length; i++){
+  	if(cart[i].SKU === SKU){
+    	cart[i].quantity = quantity;
+    }
+    
+    return cart[i];
+  }
+  
+  
+}
+
+/* console.log(updateQuantity("001", 2)) */
+
+
+const  calculateTotal = () => {
+	let sum = 0;
+	for(let i = 0; i < cart.length; i++){
+  	sum += cart[i].price;
+  }
+  return sum;
+}
+
+/* console.log( calculateTotal()); */
+
+
+function getCartDetails() {
+	return cart
+}
+
+/* console.log(getCartDetails()); */
+
+
+function applyDiscount(discountCode) {
+
+	let sum = 0;
+  for(let i = 0; i < cart.length; i++){
+  	sum += (cart[i].price * cart[i].quantity);
+  }
+	
+  if(discountCode === "SUMMER21"){
+  	sum = sum - (sum * 21 /100);
+  }
+  
+  return sum;
+}
+
+/* console.log(applyDiscount("SUMMER21")); */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
